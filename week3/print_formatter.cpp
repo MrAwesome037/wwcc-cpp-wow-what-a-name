@@ -1,20 +1,23 @@
 #include <iostream>
 using namespace std;
 
-// Overloaded functions
-int print() {
+string print(int num) {
+    string x 
+}
+
+string print(double num) {
     
 }
 
-double print() {
+string print(double num1, int num2) {
     
 }
 
-// Different number of parameters
-int print() {
+string print(string sentence) {
     
 }
 
 int main() {
     
+    return 0;
 }
