@@ -14,7 +14,7 @@ int main() {
     cout << "How many flips would you like to simulate? ";
     cin >> flips;
     for (int i = 1; i <= flips; i++) {
-        int randomNum = rand() % 2;
+        int randomNum = (rand() % 2) + 1;
         if(randomNum == 1){
           heads += 1;
         }
