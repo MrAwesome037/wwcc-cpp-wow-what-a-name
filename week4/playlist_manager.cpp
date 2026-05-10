@@ -12,8 +12,44 @@ struct Song {
     string title;
 };
 int main() {
-    Song playlist[5];
+    Song playlist[5] = {s1, s2, s3, s4, s5};
+    int total = 0;
+    Song longest;
+    string artist_search;
+    string temp_artist;
+    string genre_search;
+    string temp_genre;
     for(i = 1; i <= 5; i++){
-      
+        printf("Enter information for song %f: ", i);
+        print("Title: ");
+        cin >> playlist[i].title;
+        print("Artist Name: ");
+        cin >> playlist[i].name;
+        print("Artist Hometown: ");
+        cin >> playlist[i].hometown;
+        print("Genre: ");
+        cin >> playlist[i].genre;
+        print("Duration (in seconds): ");
+        cin >> playlist[i].durationSeconds;
+        total += playlist[i].durationSeconds;
+        if(i == 1){
+            longest = playlist[i];
+        } else if(longest.durationSeconds < playlist[i].durationSeconds){
+            longest = playlist[i];
+        }
+    }
+    print("YOUR PLAYLIST:");
+    for(i = 0; i < 4; i++){
+        printf("%s", playlist[i].title);
+        printf("Artist: %s (%s)", playlist[i].name, playlist[i].hometown);
+        printf("Genre: %s", playlist[i].genre);
+        printf("Druation: %d:%d", playlist[i].duration / 60, playlist[i].duration %60);
+    }
+    print("Playlist stats:");
+    printf("Total runtime: %d:%d", total/60,total%60);
+    printf("Longest song: %s (%d:%d)", longest.title, longest.duration / 60, longest.duration %60);
+    print("Search by artist: ");
+    cin >> artist_search;
+    transform(artist_search.begin(), artist_search.end(), artist_search.begin(), [](unsigned char c){ return tolower(c);});
     return 0;
 }
