@@ -16,7 +16,7 @@ int main() {
     int Cs = 0;
     int Ds = 0;
     int Fs = 0;
-    for (int i = 1; i <= 6; i++) {
+    for (int i = 1; i <= 5; i++) {
         printf("Enter Score for Quiz #%d (0-100): ", i);
         cin >> score;
         grades.push_back(score);
