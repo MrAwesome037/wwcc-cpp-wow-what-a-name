@@ -1,5 +1,6 @@
 // Suggested program structure
 #include <iostream>
+#include <print>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -39,7 +40,7 @@ int main() {
         Movie result_list[];
         print("1. Add Movie");
         println("2. Create Watchlist");
-        println("3. Convert to Yen");
+        println("3. Search for Movies");
         println("4. Exit");
         println("What is your choice? (1-4): ");
         cin >> choice;
