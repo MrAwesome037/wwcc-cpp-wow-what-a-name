@@ -1,1 +1,1 @@
-
+I did the movie database since I noticed I could use the written code in my other projects for this, saving me a lot of time. All the features are accessed by just running the program and selecting different options. I also used a more condensed version of turning everything lowercase that I found off the internet because frankly it was eaiser to copy and paste. Other than that I am exhausted, Spring hates me and loves giving me allergies, and I hate it in return.
