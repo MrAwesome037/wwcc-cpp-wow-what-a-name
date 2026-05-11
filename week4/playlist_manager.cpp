@@ -78,7 +78,7 @@ int main() {
     search_list[5] = {};
     transform(genre_search.begin(), genre_search.end(), genre_search.begin(), [](unsigned char c){ return tolower(c);});
     for(i = 0; i < 4; i++){
-       temp_artist = playlist[i].name;
+       temp_genre = playlist[i].name;
          transform(temp_genre.begin(), temp_genre.end(), temp_genre.begin(), [](unsigned char c){ return tolower(c);});
         if(temp_genre == genre_search){
             found = true;
