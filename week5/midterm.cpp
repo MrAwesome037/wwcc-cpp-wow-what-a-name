@@ -25,7 +25,13 @@ void print_movie(Movie m){
         print("You have not watched this movie yet");
     }
 }
-
+double get_rating(){
+    double average;
+    for(i = 0; i <= movie_list.length(); i++){
+        average += movie_list[i].rating;
+    }
+    return average/movie_list.length();
+}
 // Main function
 int main() {
     Movie movie_list[];
@@ -42,7 +48,7 @@ int main() {
         println("2. Create Watchlist");
         println("3. Search for Movies");
         println("4. Exit");
-        println("What is your choice? (1-4): ");
+        cout << "What is your choice? (1-4): ";
         cin >> choice;
         if(choice == 4){
           break;
@@ -78,10 +84,32 @@ int main() {
                 
         }
         else if(choice == 3){
-        
+            int option;
+            print("Search by title, director, or genre? (1, 2, or 3?):");
+            cin >> option;
+            if(option == 1){
+            }else if(option == 2){
+            }else if(option == 3){
+                print("Search by genre: ");
+                cin >> search;
+                printf("Songs by %s", search);
+                found = false;
+                search_list[5] = {};
+                transform(search.begin(), search.end(), search.begin(), [](unsigned char c){ return tolower(c);});
+                for(i = 0; i < 4; i++){
+                   temp_artist = playlist[i].name;
+                     transform(temp_genre.begin(), temp_genre.end(), temp_genre.begin(), [](unsigned char c){ return tolower(c);});
+                    if(temp_genre == genre_search){
+                        found = true;
+                        search_list[i] = playlist[i];
+                    }
+                }
+            }else{
+                println("Not a valid search option");
+            }
         }
         else{
-          print("Wait, this isn't a valid option, try again.");
+          println("Wait, this isn't a valid option, try again.");
         }
     } while(choice != 4);
     return 0;
