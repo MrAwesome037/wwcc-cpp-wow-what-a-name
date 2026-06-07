@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 // A class for managing a bank account
 class account {
 public:
