@@ -77,6 +77,7 @@ class Player{
     }
 };
 int main() {
+    printf("\n");
     bool ending = false;
     string name;
     bool smart = true;
@@ -91,10 +92,10 @@ int main() {
     printf("Alright, next question, are you smart? (true for yes, false for no): \n");
     cin >> decision;
     if(decision == "true"){
-        printf("Then you should be fine \n");
+        printf("Then you should be fine. \n");
         smart = true;
     } else if(decision == "false"){
-        printf("Uh, y-you'll be fine \n");
+        printf("Uh, y-you'll be fine. \n");
     }else{
         printf("Thats not a viable answer so I'm putting false. \n");
         smart = false;
@@ -102,9 +103,46 @@ int main() {
     Player p = Player(name,smart);
     printf("Now with that out of the way, lets go! \n");
     while(!ending){
+        if(progress < 1.0){
+            printf("You arrive at the entrance to the base, but there's a gaurd doing his job for once, so how will you take care of him? \n");
+            printf("Enter the number of the option you want to do.\n");
+            printf("1. Use your Gun (which you forgot to load) \n");
+            printf("2. Search for something to use \n");
+            printf("3. Sit around and do nothing \n");
+            cin >> decision;
+            if(decision == "1"){
+                printf("You throw your gun really hard, it hits the gaurd and snaps his neck, meaning there's no more gaurd! :D\n");
+                printf("You pick up your gun and continue onward. \n");
+                progress += 1.0;
+            }else if(decision == "2"){
+                printf("You search the surrounding area and find a Can O' Beans \n");
+                printf("This won't really help you but its beans, do you want it? \n");
+                printf("Yes or No?");
+                cin >> decision;
+                if(decision == "Yes"){
+                    printf("You eat the beans, it did nothing but was pretty tasty, and you get 0.1 more progress \n");
+                    progress += 0.1;
+                }else if(decision == "No"){
+                    printf("The bean can empties itself out of sadness, you monster.\n");
+                }else{
+                    printf("Your brain short circuits \n");
+                    p.take_Damage();
+                    printf("The beans seem dissapointed in you. \n");
+                }
+            }else if(decision == "3"){
+                printf("You do nothing.\n");
+                printf("Nothing happens \n");
+                printf("Incredible \n")
+            }else{
+                printf("Your brain short circuits \n");
+                p.take_Damage();
+                printf("Just look at the options man \n");
+            }
+        }
         if(p.view_health() <= 0){
             printf("You died, bruh \n");
-            printf("Bad Ending for you, the Boring Ending");
+            printf("Bad Ending for you, the Boring Ending, cuz you died.");
+            ending = true;
         }
         ending = true;
     }
