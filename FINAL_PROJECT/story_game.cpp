@@ -1,7 +1,7 @@
 /*
  * Interactive Story Game - Totally Legit Spy Game
  * Author: Kieran K. Herrmann
- * Date: [Submission Date]
+ * Date: [6/12/26]
  *
  * ==== Project Features ====
  * Variables (3+ types): Lines __
@@ -16,7 +16,7 @@
  * Enum: Lines __
  * File reading: Lines __
  * File writing: Lines __
- * Modern feature 1 (____): Lines __
+ * Modern feature 1 (Range Based For Loop): Lines __
  * Modern feature 2 (____): Lines __
  * ==========================
  */
@@ -54,14 +54,14 @@ class Player{
     }
     void take_inventory(){
         for (Items item : inventory) {
-        cout << item << " "; 
+            cout << item << " "; 
         }
     }
     bool has_item(Items i){
         for (Items item : inventory) {
-        if(i == item){
-            return true;
-        }
+            if(i == item){
+                return true;
+            }
         }
         return false;
     }
