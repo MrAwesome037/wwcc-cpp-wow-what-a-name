@@ -34,6 +34,14 @@ class Player{
       string name = n;
       bool smart = s;
     }
+    void take_Damage() {
+      health -= 1;
+    }
+    void print_inventory(){
+        for (string item : inventory) {
+        cout << item << " "; 
+        }
+    }
 };
 int main() {
     return 0;
