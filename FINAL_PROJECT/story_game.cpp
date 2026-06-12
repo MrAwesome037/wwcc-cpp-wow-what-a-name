@@ -24,11 +24,26 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <string_view>
 using namespace std;
+enum class Items {
+    Mistake_hating_watch,
+    Can_O_Beans,
+    Empty_Can_Of_Beans
+};
+ostream& operator<<(ostream& os, Items item) {
+    switch (item) {
+        case Items::Mistake_hating_watch:   os << "Mistake hating watch"; break;
+        case Items::Can_O_Beans:   os << "Can O' Beans"; break;
+        case Items::Empty_Can_Of_Beans:   os << "Can O' Beans but empty so its less fun"; break;
+        default:           os << "Unknown"; break;
+    }
+    return os;
+}
 class Player{
   private:
     int health = 10;
-    vector<string> inventory = {"Watch that hurts you when you make a mistake"};
+    vector<Items> inventory = {Items::Mistake_hating_watch};
   public:
     Player(string n, bool s){
       string name = n;
@@ -38,9 +53,12 @@ class Player{
       health -= 1;
     }
     void print_inventory(){
-        for (string item : inventory) {
+        for (Items item : inventory) {
         cout << item << " "; 
         }
+    }
+    int take_inventory(){
+      return inventory.size();
     }
 };
 int main() {
