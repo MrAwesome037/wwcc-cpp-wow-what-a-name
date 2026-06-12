@@ -28,12 +28,14 @@
 using namespace std;
 enum class Items {
     Mistake_hating_watch,
+    Gun,
     Can_O_Beans,
     Empty_Can_Of_Beans
 };
 ostream& operator<<(ostream& os, Items item) {
     switch (item) {
         case Items::Mistake_hating_watch:   os << "Watch that hurts you for making mistakes"; break;
+        case Items::Gun:    os << "Gun"; break;
         case Items::Can_O_Beans:   os << "Can O' Beans"; break;
         case Items::Empty_Can_Of_Beans:   os << "Can O' Beans but empty so its less fun"; break;
         default:           os << "Unknown"; break;
