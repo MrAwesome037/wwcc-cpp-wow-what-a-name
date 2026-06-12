@@ -23,12 +23,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 using namespace std;
 class Player{
   private:
     int health = 10;
+    vector<string> inventory = {"Watch that hurts you when you make a mistake"};
   public:
-    Player(string n, boolean s){
+    Player(string n, bool s){
       string name = n;
       bool smart = s;
     }
