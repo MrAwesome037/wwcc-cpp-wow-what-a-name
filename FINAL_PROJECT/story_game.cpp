@@ -28,8 +28,9 @@ class Player{
   private:
     int health = 10;
   public:
-    Player(string n){
+    Player(string n, boolean s){
       string name = n;
+      bool smart = s;
     }
 };
 int main() {
