@@ -52,13 +52,18 @@ class Player{
     void take_Damage() {
       health -= 1;
     }
-    void print_inventory(){
+    void take_inventory(){
         for (Items item : inventory) {
         cout << item << " "; 
         }
     }
-    int take_inventory(){
-      return inventory.size();
+    bool has_item(Items i){
+        for (Items item : inventory) {
+        if(i == item){
+            return true;
+        }
+        }
+        return false;
     }
 };
 int main() {
