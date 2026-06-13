@@ -11,13 +11,13 @@
  * Function w/ return value: Line __
  * Void function: Line __
  * Function w/ parameters: Line __
- * Vector or array: Lines __
- * Struct or class: Lines __
+ * Vector: Lines __
+ * Class: Lines __
  * Enum: Lines __
  * File reading: Lines __
  * File writing: Lines __
  * Modern feature 1 (Range Based For Loop): Lines __
- * Modern feature 2 (____): Lines __
+ * Modern feature 2 (Auto): Lines __
  * ==========================
  */
 #include <iostream>
