@@ -5,19 +5,19 @@
  *
  * ==== Project Features ====
  * Variables (3+ types): Lines 84-91
- * If/else: Lines 105 and beyond
+ * If/else: Lines 106 and beyond
  * Switch: Line 40
  * Loop: Lines 98 and beyond
  * Function w/ return value: Line 62
  * Void function: Line 58
  * Function w/ parameters: Line 70 & 73
  * Vector: Lines 52
- * Class: Lines 49
+ * Class: Lines 49 - 81
  * Enum: Lines 32 - 38
- * File reading: Lines 92-100
- * File writing: Lines 277 - 283
- * Modern feature 1 (Range Based For Loop): Lines 74-78
- * Modern feature 2 (Auto): Line 282
+ * File reading: Lines 92-101
+ * File writing: Lines 301 - 308
+ * Modern feature 1 (Range Based For Loop): Lines 66-68, 74-78
+ * Modern feature 2 (Auto): Line 306
  * ==========================
  */
 #include <iostream>
@@ -90,14 +90,15 @@ int main() {
     bool bean_choice = false;
     bool first_choice = true;
     ifstream file("story.txt");
-    if (!file) {
-        cerr << "Error: could not open story.txt" << endl;
-        return 1;
+    if (!file.is_open()){
+        cerr << "Errrrrrrrr: Could not open the file." << endl;
+        return 0;
     }
     string line;
     while (getline(file, line)) {
-        cout << line << '\n';
+        cout << line << endl;
     }
+    file.close();
     printf("But before we get started, whats your name? Secret Agent one or otherwise?: \n");
     getline(cin, name);
     printf("Alright, next question, are you smart? (true for yes, false for no): \n");
@@ -299,9 +300,10 @@ int main() {
     }
     ofstream out("stats.txt");
     if (!out) {
-        cerr << "Error: could not write summary" << endl;
+        cerr << "Errrrrrrrrrrr: could not write summary" << endl;
         return 0;
     }
     auto score = progress + p.view_health();
     out << name << " finished with score: " << score << endl;
     return 0;
+}
