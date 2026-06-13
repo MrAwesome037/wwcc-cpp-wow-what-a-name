@@ -118,6 +118,8 @@ int main() {
             if(first_choice){
                 printf("You arrive at the entrance to the base, but there's a guard doing his job for once, so how will you take care of him? \n");
                 first_choice = false;
+            }else{
+                printf("The guard is still guarding.\n");
             }
             printf("Enter the number of the option you want to do.\n");
             printf("1. Use your Gun (which you forgot to load) \n");
@@ -148,19 +150,25 @@ int main() {
                     printf("But it will accompany you :D");
                     p.add_item(Items::Can_O_Beans);
                 }
-            }else if(decision == "2" and bean_choice == false){
-                printf("You already tried this option.");
+            }else if(decision == "2" and bean_choice){
+                printf("You look around for something else, and find nothing.\n");
+                printf("The nothing was added to your inventory.\n");
             }else if(decision == "3"){
                 printf("You do nothing.\n");
                 printf("Nothing happens \n");
                 printf("Incredible \n");
             }else{
-                printf("You charge right at the gaurd and he smacks you back into the bushes \n");
+                printf("You charge right at the guard and he smacks you back into the bushes \n");
                 p.take_Damage();
                 printf("Just look at the options man \n");
             }
         }else if(progress < 2.0){
-            printf("You go through the base and come across a split path, which one will you take? \n");
+            if(first_choice){
+                printf("You go through the base and come across a split path, which direction will you go? \n");
+                first_choice = false;
+            }else{
+                printf("The path is still split.\n");
+            }
             printf("Enter the number of the option you want to do.\n");
             printf("1. Go to the left \n");
             printf("2. Go to the right \n");
@@ -186,7 +194,12 @@ int main() {
             }
         }else if(progress < 3.0){
             if(left){
-                printf("After going left, you see a guard dog napping, how will you get past it? \n");
+                if(first_choice){
+                    printf("After going left, you see a guard dog napping, how will you get past it? \n");
+                    first_choice = false;
+                }else{
+                    printf("The dog is still napping.\n");
+                }
                 printf("Enter the number of the option you want to do.\n");
                 printf("1. Sneak around it \n");
                 printf("2. Go play with it \n");
@@ -203,14 +216,19 @@ int main() {
                 }else if(decision == "3"){
                     printf("You do nothing.\n");
                     printf("Nothing happens. \n");
-                    printf("Incredible. \n");
+                    printf("As usual. \n");
                 }else{
                     printf("You scream and run right at the dog, it mauls you. \n");
                     p.take_Damage();
                     printf("Just pick an option \n");
                 }
             }else if(!left){
-                printf("Its a laser field because of course this evil base has one. \n");
+                if(first_choice){
+                    printf("Its a laser field because of course this evil base has one. \n");
+                    first_choice = false;
+                }else{
+                    printf("The lasers are still lasering.\n");
+                }
                 printf("Enter the number of the option you want to do.\n");
                 printf("1. Use your super spy skills to dodge all the lasers \n");
                 printf("2. Use the off switch \n");
@@ -226,7 +244,7 @@ int main() {
                 }else if(decision == "3"){
                     printf("You do nothing.\n");
                     printf("Nothing happens \n");
-                    printf("As usual \n");
+                    printf("As usual. \n");
                 }else{
                     printf("You scream and run right through into the lasers. \n");
                     p.take_Damage();
@@ -237,8 +255,13 @@ int main() {
                 ending = true;
             }
         }else if(progress < 4.0){
-            printf("After a long hard infiltration, you see the McGuffin, but then the Boss shows up. \n");
-            printf("What's worse is that he has a gun he didn't forget to load, its do or die, what will you do?");
+            if(first_choice){
+                printf("After a long hard infiltration, you see the McGuffin, but then the Boss shows up. \n");
+                printf("What's worse is that he has a gun he didn't forget to load, its do or die, what will you do?");
+                first_choice = false;
+            }else{
+                printf("The boss is still bossing.\n");
+            }
             printf("Enter the number of the option you want to do.\n");
             printf("1. Throw the gun at him \n");
             printf("2. Dance off! \n");
@@ -282,4 +305,3 @@ int main() {
     auto score = progress + p.view_health();
     out << name << " finished with score: " << score << endl;
     return 0;
-}
