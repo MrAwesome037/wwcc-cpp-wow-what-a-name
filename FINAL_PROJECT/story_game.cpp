@@ -277,7 +277,7 @@ int main() {
     ofstream out("stats.txt");
     if (!out) {
         cerr << "Error: could not write summary" << endl;
-        return;
+        return 0;
     }
     auto score = progress + p.view_health();
     out << name << " finished with score: " << score << endl;
