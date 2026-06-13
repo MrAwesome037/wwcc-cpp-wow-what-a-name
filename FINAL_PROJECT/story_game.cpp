@@ -4,20 +4,20 @@
  * Date: [6/12/26]
  *
  * ==== Project Features ====
- * Variables (3+ types): Lines __
- * If/else: Lines __
- * Switch: Line __
- * Loop: Lines __
- * Function w/ return value: Line __
- * Void function: Line __
- * Function w/ parameters: Line __
- * Vector: Lines __
- * Class: Lines __
- * Enum: Lines __
- * File reading: Lines __
- * File writing: Lines __
- * Modern feature 1 (Range Based For Loop): Lines __
- * Modern feature 2 (Auto): Lines __
+ * Variables (3+ types): Lines 84-91
+ * If/else: Lines 105 and beyond
+ * Switch: Line 40
+ * Loop: Lines 98 and beyond
+ * Function w/ return value: Line 62
+ * Void function: Line 58
+ * Function w/ parameters: Line 70 & 73
+ * Vector: Lines 52
+ * Class: Lines 49
+ * Enum: Lines 32 - 38
+ * File reading: Lines 92-100
+ * File writing: Lines 277 - 283
+ * Modern feature 1 (Range Based For Loop): Lines 74-78
+ * Modern feature 2 (Auto): Line 282
  * ==========================
  */
 #include <iostream>
