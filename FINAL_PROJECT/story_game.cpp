@@ -274,5 +274,11 @@ int main() {
             ending = true;
         }
     }
+    ofstream out("stats.txt");
+    if (!out) {
+        cerr << "Error: could not write summary" << endl;
+        return;
+    }
+    out << name << " finished with progress: " << progress << endl;
     return 0;
 }
