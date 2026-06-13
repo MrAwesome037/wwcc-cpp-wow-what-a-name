@@ -89,11 +89,15 @@ int main() {
     bool left = true;
     bool bean_choice = false;
     bool first_choice = true;
-    printf("Welcome to the 'Totally Legit Spy Game'!\n");
-    printf("Your mission is to infiltrate ze bad guys base and steal the Legendary McGuffin.\n");
-    printf("It would be easy if not for your purchase of the Watch that hurts you for making mistakes.\n");
-    printf("So now you have to go through their entire lair with it and the help of your trusty Gun, that you forgot to load (nice one). \n");
-    printf("But as long as keep a cool head, (and use the options I give you), you'll succeed.\n");
+    ifstream file("story.txt");
+    if (!file) {
+        cerr << "Error: could not open story.txt" << endl;
+        return 1;
+    }
+    string line;
+    while (getline(file, line)) {
+        cout << line << '\n';
+    }
     printf("But before we get started, whats your name? Secret Agent one or otherwise?: \n");
     getline(cin, name);
     printf("Alright, next question, are you smart? (true for yes, false for no): \n");
