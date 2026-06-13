@@ -48,7 +48,7 @@ string item_string(Items item) {
 }
 class Player{
   private:
-    int health = 10;
+    int health = 5;
     vector<Items> inventory = {Items::Mistake_hating_watch, Items::Gun};
   public:
     Player(string n, bool s){
@@ -57,7 +57,7 @@ class Player{
     }
     void take_Damage() {
         printf("You took a point of damage because your watch hates you \n");
-      health -= 1;
+        health -= 1;
     }
     int view_health(){
         return health;
@@ -66,6 +66,9 @@ class Player{
         for (Items item : inventory) {
             cout << item_string(item) << " "; 
         }
+    }
+    void add_item(Items item){
+        inventory.push_back(item);
     }
     bool has_item(Items i){
         for (Items item : inventory) {
@@ -83,6 +86,7 @@ int main() {
     bool smart = true;
     string decision;
     float progress = 0.0;
+    bool left = true;
     printf("Welcome to the 'Totally Legit Spy Game'!\n");
     printf("Your mission is to infiltrate ze bad guys base and steal the Legendary %s\n", item_string(Items::McGuffin));
     printf("It would be easy if not for your purchase of the %s \n", item_string(Items::Mistake_hating_watch));
@@ -122,21 +126,92 @@ int main() {
                 if(decision == "Yes"){
                     printf("You eat the beans, it did nothing but was pretty tasty, and you get 0.1 more progress \n");
                     progress += 0.1;
+                    printf("And the empty can of beans");
+                    p.add_item(Items::Empty_Can_Of_Beans);
                 }else if(decision == "No"){
                     printf("The bean can empties itself out of sadness, you monster.\n");
                 }else{
                     printf("Your brain short circuits \n");
                     p.take_Damage();
                     printf("The beans seem dissapointed in you. \n");
+                    printf("But it will accompany you :D");
+                    p.add_item(Items::Can_O_Beans);
                 }
             }else if(decision == "3"){
                 printf("You do nothing.\n");
                 printf("Nothing happens \n");
-                printf("Incredible \n")
+                printf("Incredible \n");
             }else{
-                printf("Your brain short circuits \n");
+                printf("You charge right at the gaurd and he smacks you back into the bushes \n");
                 p.take_Damage();
                 printf("Just look at the options man \n");
+            }
+        }else if(progress < 2.0){
+            printf("You go through the base and come across a split path, which one will you take? \n");
+            printf("Enter the number of the option you want to do.\n");
+            printf("1. Go to the left \n");
+            printf("2. Go to the right \n");
+            printf("3. Sit around and do nothing \n");
+            cin >> decision;
+            if(decision == "1"){
+                printf("You go left \n");
+            }else if(decision == "2"){
+                printf("You go right \n");
+            }else if(decision == "3"){
+                printf("You do nothing.\n");
+                printf("Nothing happens \n");
+                printf("Incredible \n");
+            }else{
+                printf("You try and run down the middle, straight into a wall. \n");
+                p.take_Damage();
+                printf("Please pick an option that actually shows up next time \n");
+            }
+        }else if(progress < 3.0){
+            if(left){
+                printf("After going left, you see a gaurd dog napping, how will you get past it? \n");
+                printf("Enter the number of the option you want to do.\n");
+                printf("1. Sneak around it \n");
+                printf("2. Go play with it \n");
+                printf("3. Sit around and do nothing \n");
+                cin >> decision;
+                if(decision == "1"){
+                    printf("You quietly tip toe pass the dog without it waking up, all that spy training wasn't for nothing. \n");
+                }else if(decision == "2"){
+                    printf("You go to play with it, it wakes up and... \n");
+                    printf("It mauls you because that's it job, duh");
+                    p.take_Damage();
+                }else if(decision == "3"){
+                    printf("You do nothing.\n");
+                    printf("Nothing happens. \n");
+                    printf("Incredible. \n");
+                }else{
+                    printf("You scream and run right at the dog, it mauls you. \n");
+                    p.take_Damage();
+                    printf("Just pick an option \n");
+                }
+            }else if(!left){
+                printf("You go through the base and come across a split path, which one will you take? \n");
+                printf("Enter the number of the option you want to do.\n");
+                printf("1. Go to the left \n");
+                printf("2. Go to the right \n");
+                printf("3. Sit around and do nothing \n");
+                cin >> decision;
+                if(decision == "1"){
+                    printf("You go left \n");
+                }else if(decision == "2"){
+                    printf("You go right \n");
+                }else if(decision == "3"){
+                    printf("You do nothing.\n");
+                    printf("Nothing happens \n");
+                    printf("Incredible \n");
+                }else{
+                    printf("You try and run down the middle, straight into a wall. \n");
+                    p.take_Damage();
+                    printf("Please pick an option that actually shows up next time \n");
+                }
+            }else{
+                printf("wut \n");
+                ending = true;
             }
         }
         if(p.view_health() <= 0){
