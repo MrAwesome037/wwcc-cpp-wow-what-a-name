@@ -93,6 +93,7 @@ int main() {
     printf("Your mission is to infiltrate ze bad guys base and steal the Legendary McGuffin.\n");
     printf("It would be easy if not for your purchase of the Watch that hurts you for making mistakes.\n");
     printf("So now you have to go through their entire lair with it and the help of your trusty Gun, that you forgot to load (nice one). \n");
+    printf("But as long as keep a cool head, (and use the options I give you), you'll succeed.\n");
     printf("But before we get started, whats your name? Secret Agent one or otherwise?: \n");
     getline(cin, name);
     printf("Alright, next question, are you smart? (true for yes, false for no): \n");
