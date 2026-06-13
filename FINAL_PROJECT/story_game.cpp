@@ -279,6 +279,7 @@ int main() {
         cerr << "Error: could not write summary" << endl;
         return;
     }
-    out << name << " finished with progress: " << progress << endl;
+    auto score = progress + p.view_health();
+    out << name << " finished with score: " << score << endl;
     return 0;
 }
